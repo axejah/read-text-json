@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>BonnenScanner</title>
+  </head>
+  <body>
+    <div class="effect-filter">
+      <div class="progress-container">
+        <p class="loading-text">Laden van bon</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <textarea readonly class="output-json"><%= data %></textarea>
+      <div class="buttons">
+        <a class="return-btn" href="/">Nog een bonnetje scannen</a>
+        <button class="copy-btn" onclick="copyJson()">
+          Selecteer en kopiëer
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function copyJson() {
+        const textArea = document.querySelector(".output-json");
+        textArea.select();
+        document.execCommand("copy");
+      }
+    </script>
+  </body>
+</html>

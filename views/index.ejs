@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>BonnenScanner</title>
+  </head>
+  <body>
+    <div class="effect-filter">
+      <div class="progress-container">
+        <p class="loading-text">Laden van bon</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <form
+      action="/upload"
+      enctype="multipart/form-data"
+      class="main-container"
+      method="POST"
+    >
+      <h1 class="main-title">Upload je bon</h1>
+      <p class="paragraph">Upload je bon in <strong>jpeg</strong> formaat</p>
+      <p class="paragraph" style="color: red">
+        <strong><%= typeof msg != 'undefined' ? msg : '' %></strong>
+      </p>
+      <div class="img-container">
+        <input
+          type="file"
+          name="imgInput"
+          class="invisible-file-uploader"
+          accept=".jpg, .jpeg"
+        />
+        <div class="img-user-instructions">
+          <img src="./img/image.svg" alt="Mountain IMG" class="svg-icon" />
+          <p class="paragraph">
+            Sleep je bon hier of klik om een bon te kiezen
+          </p>
+        </div>
+        <img alt="" class="img-preview" />
+      </div>
+      <div class="fake-input-button-container">
+        <button id="submit-btn" type="submit">Verzenden xd</button>
+      </div>
+    </form>
+    <script src="./js/upload.js"></script>
+  </body>
+</html>
