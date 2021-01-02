@@ -66,7 +66,7 @@ router.post("/upload", async (req, res) => {
       }
     });
     // azure call through function
-    let data = await cvRequest("testimg.jpg");
+    let data = await cvRequest(req.file.filename);
 
     await res.render("result", { data: data });
   } catch {
